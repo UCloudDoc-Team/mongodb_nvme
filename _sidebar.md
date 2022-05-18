@@ -1,24 +1,23 @@
-<!-- 请勿添加产品标题，标题行将由系统自动增加，名称将于您申请邮件提供的仓库名称一致 -->
 
-* [概览](README.md)
-* 产品介绍   <!-- 以下是参考的目录模版，旨在建议产品文档应该包含的内容模块。实际章节划分可根据实际内容进行调整 -->
-   * [什么是云主机](相对链接)
-   * [功能与优势](相对链接)
-   * [应用场景](相对链接)
-* 计费
-   * [计费模式](相对链接)
-   * [定价表](相对链接)
-   * [配置变更](相对链接)
-   * [续费](相对链接)
-   * [退款](相对链接)
-* 注意事项与使用限制
-   * [注意事项描述](相对链接)
-* 创建第一台云主机
-   * [创建资源](相对链接)
+* [概览](/mongodb_nvme/README)
+* 产品简介
+    * [什么是云数据库MongoDB(NVMe)](/mongodb_nvme/product/concept)
+    * [主要概念](/mongodb_nvme/product/terminology)
+    * [产品优势](/mongodb_nvme/product/superiority)
+    * [规格版本](/mongodb_nvme/product/version)
+* 快速上手
+    * [一键副本集](/mongodb_nvme/quick/replicaset)
+    * [副本集模式连接](/mongodb_nvme/quick/con-replicaset)
+    * [一键分片集](/mongodb_nvme/quick/cluster)
+* 产品架构
+    * [副本集架构](/mongodb_nvme/architecture/replicaset)
+    * [分片集群架构](/mongodb_nvme/architecture/cluster)
 * 操作指南
-   * [创建](相对链接)
-   * [管理](相对链接)
-* 常见问题
-   * 场景相关 <!-- 平台已支持三级及以下目录收起展开，为确保点击区域充分，包含三级目录的二级标题请勿添加链接 -->
-      * [问题描述](相对链接)
-* [词汇表](_glossary.md)
+    * [实例管理](/mongodb_nvme/guide/instance)
+* 产品应用
+    * [客户场景](/mongodb_nvme/use/user)
+    * [行业应用](/mongodb_nvme/use/industry)
+* [基准测试](/mongodb_nvme/test)
+* [产品价格](/mongodb_nvme/price)
+* [FAQs](/mongodb_nvme/faqs)
+    
