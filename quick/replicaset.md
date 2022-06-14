@@ -20,7 +20,7 @@
 
 4、支付完成后，页面跳转回MongoDB实例管理页，MongoDB实例进行初始化，待初始化完成之后即可使用。在MongoDB实例管理页，列出了所有MongoDB实例信息，包括实例名称、属性、IP地址、配置、状态、操作等。
 
-![image](/images/list.png)
+![image](/images/quick/list.png)
 
 5、选择某一个MongoDB实例后，点击名称或详情、跳转到其二级详细页面，详情页面可以查看实例信息、监控数据和进行常用数据库管理操作。
 
