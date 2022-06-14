@@ -24,4 +24,4 @@
 
 5、选择某一个MongoDB实例后，点击名称或详情、跳转到其二级详细页面，详情页面可以查看实例信息、监控数据和进行常用数据库管理操作。
 
-![image](/images/mongodbv404.png)
+![image](/images/quick/repdetail.png)
