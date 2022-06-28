@@ -4,7 +4,6 @@
     * [什么是云数据库MongoDB(NVMe)](/mongodb_nvme/product/concept)
     * [主要概念](/mongodb_nvme/product/terminology)
     * [产品优势](/mongodb_nvme/product/superiority)
-    * [规格版本](/mongodb_nvme/product/version)
 * 产品应用
     * [客户场景](/mongodb_nvme/use/user)
     * [行业应用](/mongodb_nvme/use/industry)
