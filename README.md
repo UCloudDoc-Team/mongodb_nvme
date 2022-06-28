@@ -9,7 +9,7 @@
     * [行业应用](/mongodb_nvme/use/industry)
 * 计费说明
     * [计费指南](/mongodb_nvme/price/bill)
-    * [计费指南](/mongodb_nvme/price/recycle)
+    * [回收/删除](/mongodb_nvme/price/recycle)
 * 快速上手
     * [一键副本集](/mongodb_nvme/quick/replicaset)
     * [副本集模式连接](/mongodb_nvme/quick/con-replicaset)
