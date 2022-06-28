@@ -5,18 +5,20 @@
     * [主要概念](/mongodb_nvme/product/terminology)
     * [产品优势](/mongodb_nvme/product/superiority)
     * [规格版本](/mongodb_nvme/product/version)
+* 产品应用
+    * [客户场景](/mongodb_nvme/use/user)
+    * [行业应用](/mongodb_nvme/use/industry)
+* 计费说明
+    * [计费指南](/mongodb_nvme/price/bill)
+    * [计费指南](/mongodb_nvme/price/recycle)
 * 快速上手
     * [一键副本集](/mongodb_nvme/quick/replicaset)
     * [副本集模式连接](/mongodb_nvme/quick/con-replicaset)
     * [一键分片集](/mongodb_nvme/quick/cluster)
+* 操作指南
+    * [实例管理](/mongodb_nvme/guide/instance)
 * 产品架构
     * [副本集架构](/mongodb_nvme/architecture/replicaset)
     * [分片集群架构](/mongodb_nvme/architecture/cluster)
-* 操作指南
-    * [实例管理](/mongodb_nvme/guide/instance)
-* 产品应用
-    * [客户场景](/mongodb_nvme/use/user)
-    * [行业应用](/mongodb_nvme/use/industry)
 * [基准测试](/mongodb_nvme/test)
-* [产品价格](/mongodb_nvme/price)
 * [FAQs](/mongodb_nvme/faqs)
