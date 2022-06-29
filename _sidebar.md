@@ -20,6 +20,5 @@
     * [副本集架构](/mongodb_nvme/architecture/replicaset)
     * [分片集群架构](/mongodb_nvme/architecture/cluster)
 * [基准测试](/mongodb_nvme/test)
-* [产品价格](/mongodb_nvme/price)
 * [FAQs](/mongodb_nvme/faqs)
     
