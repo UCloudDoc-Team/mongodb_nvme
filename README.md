@@ -16,8 +16,4 @@
     * [一键分片集](/mongodb_nvme/quick/cluster)
 * 操作指南
     * [实例管理](/mongodb_nvme/guide/instance)
-* 产品架构
-    * [副本集架构](/mongodb_nvme/architecture/replicaset)
-    * [分片集群架构](/mongodb_nvme/architecture/cluster)
-* [基准测试](/mongodb_nvme/test)
 * [FAQs](/mongodb_nvme/faqs)
