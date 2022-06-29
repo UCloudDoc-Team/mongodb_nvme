@@ -1,14 +1,9 @@
 # FAQs
 
 
-
 ## MongoDB实例功能和开源MongoDB有区别吗？
 
 MongoDB实例和原生MongoDB完全一致。
-
-## MongoDB实例是否使用物理机搭建？
-
-MongoDB实例使用物理机搭建，并采用高性能磁盘以及使用RAID1确保数据安全。
 
 ## MongoDB的安全性如何？
 
@@ -20,11 +15,11 @@ MongoDB实例是强制鉴权的，只能通过认证的。
 
 ### 数据安全性
 
-所有的MongoDB实例的数据文件所存放的硬盘都进行了RAID1保护。
+所有的MongoDB实例的数据文件所存放的RSSD云盘， RSSD云盘提供数据保护。
 
-MongoDB实例每天都会进行数据备份，同时也提供了手工备份功能，以便用户能够在特定时间点主动对数据进行备份。
+MongoDB实例提供自动备份功能， 在指定的时间自动数据备份，同时也提供了手工备份功能，以便用户能够在特定时间点主动对数据进行备份。
 
-MongoDB实例（Master）支持创建从库（搭建在与主库不同的物理机上），从库与主库自动进行数据同步，提供数据灾备的能力。
+MongoDB集群数据三副本存储， 提供冗余保护。
 
 ## 如何备份与恢复？
 
@@ -34,55 +29,6 @@ MongoDB实例支持手动备份，用户可以保存某些关键时间点的重�
 
 如果要恢复MongoDB实例，建议用户先将备份文件下载至本地，由专业人员确认无误后导入MongoDB实例中，以规避数据风险。
 
-## MongoDB实例类型有哪些？
-
-满足高可用和水平扩展的要求，支持单点、副本集、分片集群的多种架构演进。
-
-所有的数据节点都是内置副本集的，即使单点也是一个副本集，所以副本集按类型划分可以细分为单点副本集和多点副本集，其中单点副本集只包含一个primary，多点副本集包含一个primary和若干个secondary或者arbiter。
-
-关于副本集可参考：
-
-<http://docs.mongodb.org/manual/core/replica-set-members/>
-
-## 怎么查看MongoDB的统计信息？
-
-MongoDB实例管理页可以查看统计信息。
-
-## MongoDB集群包括哪些组件？
-
-集群按规模可以划分为两种：
-
-副本集：一个primary+若干个secondary+若干个arbiter，副本集提供高可用特性。
-
-分片集群：具有分片功能的多副本集的分布式架构，支持scale-out特性，其中每个分片指的就是副本集，集群包括一个或多个分片（数据存储），一个或三个configsvr（集群元数据管理），和一个或多个Mongos（路由）。
-
-当生产环境的数据规模、性能或载荷等因素超过单副本集的限制，建议启用分片。生产环境完整的分片集群架构包括：
-
-分片集群的基本概念可参考：
-
-<http://docs.mongodb.org/manual/core/sharding/>
-
-## 配置文件有哪些？
-
-提供两个默认配置文件，分别是shardsvr默认配置文件和configsvr默认配置文件，它们用于创建不同类型的实例，其中：
-
-shardsvr配置文件：支持单点副本集、多点副本集、sharding的分片服务器实例。
-
-configsvr配置文件：支持sharding的配置服务器实例。
-
-用户可以从默认配置文件修改配置参数，另存为自定义的配置文件，供这些实例使用。
-
-## 如何创建secondary和arbiter？
-
-1、支持一键创建三节点副本集，如果需要更多节点，根据自身需求可以增加，方法如下：
-
-进入控制台MongoDB实例管理页，选中primary节点，在右边的弹框中选中“创建节点”按钮进行创建。
-
-![image](/images/mongodbv4node01.png)
-
-2、在“创建节点”的弹框中选择节点类型secondary或arbiter。创建完成后，新增节点将按指定的角色加入到primary节点的副本集中。同个副本集的所有节点共享相同的管理员账号和密码。
-
-![image](/images/mongodbv4node02.png)
 
 ## 如何使用鉴权？
 
@@ -126,7 +72,7 @@ MongoDB实例统一使用keyfile
 
 2、切换到业务db，如game。
 
-3、使用createUser（2.6版本及更新版本支持）或者 addUser（2.4版本支持）新增用户。
+3、使用createUser。
 
 4、使用mongo客户端连接到业务库，如：
 
@@ -136,55 +82,6 @@ MongoDB的2.6版本开始对安全机制做了比较多改进，具体方法可�
 
 <http://docs.mongodb.org/master/reference/method/db.createUser/>
 
-2.4版本见：
-
-<http://docs.mongodb.org/v2.4/reference/method/db.addUser/#db.addUser>
-
-## 如何搭建分片集群？
-
-目前，UCloud支持shardsvr、configsvr和mongos，可以在控制台页面申请。
-
-## 如何访问shardsvr？如何访问configsvr？如何连接集群？
-
-访问shardsvr/configsvr、连接集群的方式与连接mongodb实例的方式一致：
-
-    mongo $mongos-ip:$mongos-port/admin -u $admin -p $admin_password
-
-注意：这里使用的管理员和密码是configsvr统一采用的管理员和密码。如：
-
-    mongo 10.4.4.50:27017/admin -u root -p root
-
-## 如何开启分片？
-
-搭建分片集群和启用分片是前后两个步骤，搭建分片集群是基础，启用分片才真正开始均衡分片的数据分布。步骤包括：
-
-1、启动mongos；
-
-2、使用客户端mongo连接到mongos；
-
-3、使用sh.addShard注册分片，方法参见：
-
-<http://docs.mongodb.org/manual/reference/method/sh.addShard/>
-
-4、使用sh.enableSharding启用某个库的分片功能，方法参见：
-
-<http://docs.mongodb.org/manual/reference/method/sh.enableSharding/>
-
-5、使用sh.shardCollection均衡某个集合的数据分布，注意选择合理的片键，方法 参见：
-
-<http://docs.mongodb.org/manual/reference/method/sh.shardCollection/>
-
-6、使用sh.status查看集合的数据分布，方法参见：
-
-<http://docs.mongodb.org/manual/reference/method/sh.status/>
-
-**如何迁移数据到MongoDB？**
-
-可以通过以下方法迁移数据到MongoDB，包括：
-
-1、使用mongodump和mongorestore工具导出源数据，再导入到副 本集的primary或者分片集群的mongos；
-
-2、如果源db是部署在uhost上，可以在内网通过副本集的复制机制同步数据到UCloud的MongoDB；
 
 **MongoDB的内存是如何管理？**
 
@@ -240,34 +137,6 @@ mongostat是官方提供的一种监控工具，使用方法是:
 使用客户端mongo连接到
 secondary节点，执行命令rs.printSlaveReplicationInfo()查看与primary节点的同
 步状态，可以看到是否落后primary。
-
-## 如何使用API创建Mongos？
-
-如果 uhost自建mongos比较麻烦，也可以通过API调用来创建mongos，具体方法可以参见
-CreateUDBRouteInstance。
-
-**如何实现跨机房热迁移MongoDB？**
-
-要求是将
-MongoDB从X机房热迁移至Y机房，基本原理是将Y机房的MongoDB实例加入到X机房MongoDB的副本集中，通过复制的方式迁移数据，同步完成后，提升Y机房的MongoDB实例为primary节点。
-
-为保证迁
-移过程不会出现单点故障或者无法选举primary等导致不可用，要求X机房的MongoDB副本集是多点的，节点数维持奇数个，在热迁移完成之前，不能停机。确保应用层链接db并非使用固定ip，而是驱动。MongoDB官网可以查看如何连接副本集，利用高可用特性。过
-程包括：
-
-在Y机房创建一个primary节点；
-
-在Y机房的primary节点创建若干个从节点或者仲裁节点；
-
-联系我们提供协助，将Y机房的所有db实例加入到X机房的副本集；
-
-观察Y机房db的同步状态；
-
-如果完成后，则可以对副本集重置，提升Y机房的某个节点为新primary节点；
-
-登陆到Y机房的新primary节点重置副本集，逐台remove X机房的db实例；
-
-按需要，完成迁移后，可以在控制台删除X机房的db实例；
 
 ## 利用HAproxy外网访问UDB-MONGO
 
@@ -377,23 +246,6 @@ server，我们UDB的默认local库大小是5G。如果您需要设置成指定�
       "ok" : 1
     }
 
-## mongoDB-3.2备份文件解压
-
-linux环境：
-
-mongoDB-3.2的备份文件为.tgz格式，解压时执行如下命令：
-
-    gunzip -c xxxxxxxxxx.tgz > xxxxxxx.mongoarchive
-
-手动恢复的命令如下：
-
-``` 
-mongorestore -h <host> -u <user> -p <pwd> --archive=xxxxxxx.mongoarchive 
-```
-
-Windows环境：
-
-下载的mongoDB-3.2的备份文件的后缀名是.tgz，将后缀名改为mongoarchive.gz，然后再通过解压软件解压缩。
 
 ## 如何连接MongoDB云数据库？
 
