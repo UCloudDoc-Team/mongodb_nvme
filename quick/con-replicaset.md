@@ -13,7 +13,7 @@ mongodb://[username:password@]host1[:port1][,host2[:port2],...[,hostN[:portN]]][
 ## 例子
 假设控制台上有这么一个副本集：
 
-![image](/images/image-20210122174239234.png)
+![image](/images/quick/list.png)
 
 首先我们得知，它的3个IP分别是10.9.149.246, 10.9.6.114, 10.9.183.226
 
