@@ -12,7 +12,6 @@
     * [回收/删除](/mongodb_nvme/price/recycle)
 * 快速上手
     * [一键副本集](/mongodb_nvme/quick/replicaset)
-    * [副本集模式连接](/mongodb_nvme/quick/con-replicaset)
     * [一键分片集](/mongodb_nvme/quick/cluster)
 * 操作指南
     * [实例管理](/mongodb_nvme/guide/instance)
