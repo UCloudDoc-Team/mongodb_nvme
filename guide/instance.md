@@ -25,9 +25,9 @@
 
 ![image](/images/manage/batch_delete.png)
 
-### 启动MongoDB实例
+## 启动MongoDB实例
 
 如果要启动处于关闭状态的MongoDB实例，首先选择需要启动的MongoDB实例，在右侧操作项中，点击“启动”按钮，弹出的确认对话框选择确定，即可启动MongoDB实例。
 
-![image](/images/mongodbv4001.png)
+![image](/images/manage/start.png)
 
