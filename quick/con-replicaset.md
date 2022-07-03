@@ -15,37 +15,33 @@ mongodb://[username:password@]host1[:port1][,host2[:port2],...[,hostN[:portN]]][
 
 ![image](/images/quick/list.png)
 
-首先我们得知，它的3个IP分别是10.9.149.246, 10.9.6.114, 10.9.183.226
+首先我们得知，它的3个节点对应`IP:PORT`分别是`10.60.227.86:27017,10.60.162.144:27017,10.60.16.145:27017`
 
-然后我们获取这个副本集的副本集ID。先对任意一个节点点击”详情”：
+然后我们获取这个副本集的副本集ID。对于任一集群其副本集ID即是列表中`资源ID`
 
-![image](/images/image-20210122174450415.png)
+![image](/images/quick/setname.png)
 
-进去之后，可以在详情信息中看到副本集名称：
-
-![image](/images/image-20210122174543537.png)
-
-从图中，可以得到这个副本集的副本集名称是`udb-5x15saxi`.
+从图中，可以得到这个副本集的副本集名称是`umongodb-rs-xjnas2un`.
 
 因此，我们可以得到这个副本集的连接模式的最基本的MongoDB URL为：
 ```http
-mongodb://10.9.149.246,10.9.6.114,10.9.183.226/?replicaSet=udb-5x15saxi
+mongodb://10.60.227.86:27017,10.60.162.144:27017,10.60.16.145:27017/?replicaSet=umongodb-rs-xjnas2un
 ```
 
 连接的截图如下图所示：
 
-![image](/images/image-20210122175500116.png)
+![image](/images/quick/connectReplicaSet.png)
 
 ### 备注
 * 副本集模式的IP列表不需要全部列全，只需要列的列表中能有超过1个节点的IP就可以了。客户端会自动去询问对应节点，把所有的IP列表都拿到
 
 * 关于MongoDB URL的`/database`部分：根据文档描述，如果在MongoDB URL当中指定了用户名和密码，那么`/database`部分就是指定了对应的authentication database。（就是实例截图中的`--authenticationDatabase`参数）。因此，上面的这个例子，如果纯粹使用MongoDB URL连接的话，使用下面这个URL：
 ```http
-mongodb://ucloudbackup:thisispassword@10.9.149.246,10.9.6.114,10.9.183.226/admin?replicaSet=udb-5x15saxi
+mongodb://root:thisispassword@10.60.227.86:27017,10.60.162.144:27017,10.60.16.145:27017/admin?replicaSet=umongodb-rs-xjnas2un
 ```
   截图如下：
   
-  ![image](/images/image-20210122180341253.png)
+  ![image](/images/quick/connectReplicaSet2.png)
   
 ## 使用副本集连接模式实现“读写分离”
 使用副本集模式的`readPreference`参数能够实现写操作在主库进行，读操作在从库进行的”读写分离“功能。
@@ -59,13 +55,13 @@ mongodb://ucloudbackup:thisispassword@10.9.149.246,10.9.6.114,10.9.183.226/admin
 
 上面的例子中，可以使用下面的方法实现读写分离的效果：
 ```http
-mongodb://ucloudbackup:thisispassword@10.9.149.246,10.9.6.114,10.9.183.226/admin?replicaSet=udb-5x15saxi&readPreference=secondary
+mongodb://root:thisispassword@10.60.227.86:27017,10.60.162.144:27017,10.60.16.145:27017/admin?replicaSet=umongodb-rs-xjnas2un&readPreference=secondary
 ```
 
-![image](/images/image-20210122181835374.png)
+![image](/images/quick/connectReplicaSet3.png)
 
 ## 参考文档：
 
-* https://docs.mongodb.com/v3.4/reference/connection-string/#replica-set-option
-* https://docs.mongodb.com/v3.4/reference/connection-string/#read-preference-options
+* https://www.mongodb.com/docs/v3.6/reference/connection-string/#replica-set-option
+* https://www.mongodb.com/docs/v3.6/reference/connection-string/#read-preference-options
 
