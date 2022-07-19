@@ -13,25 +13,18 @@ mongodb://[username:password@]host1[:port1][,host2[:port2],...[,hostN[:portN]]][
 ## 例子
 假设控制台上有这么一个副本集：
 
-![image](/images/quick/rsConnectURL.jpg)
+![image](/images/quick/rsConnectURL.png)
 
 访问地址一栏可以获取到副本集的URL连接地址。复制后将'****'修改为副本集的密码即可进行连接。
 
 连接的截图如下图所示：
 
-![image](/images/quick/connectReplicaSet.png)
+![image](/images/quick/ConnectReplicaset4.png)
 
-### 备注
-* 副本集模式的IP列表不需要全部列全，只需要列的列表中能有超过1个节点的IP就可以了。客户端会自动去询问对应节点，把所有的IP列表都拿到
+副本集连接也可通过参数方式指定连接的用户(-u)，密码(-p)，database(--authenticationDatabase)等，截图如下：
 
-* 关于MongoDB URL的`/database`部分：根据文档描述，如果在MongoDB URL当中指定了用户名和密码，那么`/database`部分就是指定了对应的authentication database。（就是实例截图中的`--authenticationDatabase`参数）。因此，上面的这个例子，如果纯粹使用MongoDB URL连接的话，使用下面这个URL：
-```http
-mongodb://root:thisispassword@10.60.227.86:27017,10.60.162.144:27017,10.60.16.145:27017/admin?replicaSet=umongodb-rs-xjnas2un
-```
-  截图如下：
-  
-  ![image](/images/quick/connectReplicaSet2.png)
-  
+![image](/images/quick/ConnectReplicaset5.png)
+
 ## 使用副本集连接模式实现“读写分离”
 使用副本集模式的`readPreference`参数能够实现写操作在主库进行，读操作在从库进行的”读写分离“功能。
 它有这么几个值：
@@ -44,7 +37,7 @@ mongodb://root:thisispassword@10.60.227.86:27017,10.60.162.144:27017,10.60.16.14
 
 上面的例子中，可以使用下面的方法实现读写分离的效果：
 ```http
-mongodb://root:thisispassword@10.60.227.86:27017,10.60.162.144:27017,10.60.16.145:27017/admin?replicaSet=umongodb-rs-xjnas2un&readPreference=secondary
+mongodb://root:thisispassword@10.60.52.158:27017,10.60.188.13:27017,10.60.128.181:27017/admin?replicaSet=umongodb-rs-xjnas2un&readPreference=secondary
 ```
 
 ![image](/images/quick/connectReplicaSet3.png)
