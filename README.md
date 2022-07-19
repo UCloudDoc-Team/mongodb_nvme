@@ -17,4 +17,5 @@
     * [分片集模式连接](/mongodb_nvme/quick/con-shard)
 * 操作指南
     * [实例管理](/mongodb_nvme/guide/instance)
+    * [备份管理](/mongodb_nvme/guide/backup)
 * [FAQs](/mongodb_nvme/faqs)
