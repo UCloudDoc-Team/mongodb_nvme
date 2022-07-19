@@ -13,20 +13,9 @@ mongodb://[username:password@]host1[:port1][,host2[:port2],...[,hostN[:portN]]][
 ## 例子
 假设控制台上有这么一个副本集：
 
-![image](/images/quick/list.png)
+![image](/images/quick/rsConnectURL.jpg)
 
-首先我们得知，它的3个节点对应`IP:PORT`分别是`10.60.227.86:27017,10.60.162.144:27017,10.60.16.145:27017`
-
-然后我们获取这个副本集的副本集ID。对于任一集群其副本集ID即是列表中`资源ID`
-
-![image](/images/quick/setname.png)
-
-从图中，可以得到这个副本集的副本集名称是`umongodb-rs-xjnas2un`.
-
-因此，我们可以得到这个副本集的连接模式的最基本的MongoDB URL为：
-```http
-mongodb://10.60.227.86:27017,10.60.162.144:27017,10.60.16.145:27017/?replicaSet=umongodb-rs-xjnas2un
-```
+访问地址一栏可以获取到副本集的URL连接地址。复制后将'****'修改为副本集的密码即可进行连接。
 
 连接的截图如下图所示：
 
