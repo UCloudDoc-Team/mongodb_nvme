@@ -18,4 +18,5 @@
 * 操作指南
     * [实例管理](/mongodb_nvme/guide/instance)
     * [备份管理](/mongodb_nvme/guide/backup)
+    * [告警管理](/mongodb_nvme/guide/monitor)
 * [FAQs](/mongodb_nvme/faqs)
