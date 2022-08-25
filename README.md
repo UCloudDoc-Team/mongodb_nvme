@@ -12,10 +12,11 @@
     * [回收/删除](/mongodb_nvme/price/recycle)
 * 快速上手
     * [一键副本集](/mongodb_nvme/quick/replicaset)
-    * [一键分片集](/mongodb_nvme/quick/cluster)
     * [副本集模式连接](/mongodb_nvme/quick/con-replicaset)
+    * [一键分片集](/mongodb_nvme/quick/cluster)
     * [分片集模式连接](/mongodb_nvme/quick/con-shard)
 * 操作指南
     * [实例管理](/mongodb_nvme/guide/instance)
-    * [资源告警](/mongodb_nvme/guide/monitor)
+    * [备份管理](/mongodb_nvme/guide/backup)
+    * [告警管理](/mongodb_nvme/guide/monitor)
 * [FAQs](/mongodb_nvme/faqs)

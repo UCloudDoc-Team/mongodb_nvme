@@ -6,7 +6,7 @@ MongoDB实例类型有：数据节点、路由节点、配置节点；数据节�
 
 ## 节点
 
-MongoDB分为Primary（Shardsvr）、Secondary、Configsvr、Mongos等节点类型。
+MongoDB分为Primary、Secondary、Configsvr、Mongos等节点类型。
 
 Primary节点：为副本集主节点，副本集默认是三节点副本集架构，支持变更副本集节点配置，支持增减副本集内节点个数。
 
@@ -26,7 +26,7 @@ MongoDB 目前支持 MongoDB 3.6 和 MongoDB 4.2，用户可以根据需求选�
 
 ## 分片集
 
-控制台支持创建分片集群，由Configsvr三副本+N个Mongos+N个数据分片（N节点副本集：Primary节点+N个Secondary节点）构成，路由节点和数据分片可以根据业务数据情况增减节点和分片的数量会配置。默认Configsvr三副本的分片集群支持版本：MongoDB 3.6和MongoDB 4.2版本。
+控制台支持创建分片集群，由Configsvr三副本 + N个Mongos + M个数据分片。 每个数据分片是一个完整的P节点副本集：Primary节点+（P-1）个 Secondary节点构成，路由节点和数据分片可以根据业务数据情况增减节点和分片的数量会配置。默认Configsvr三副本的分片集群支持版本：MongoDB 3.6和MongoDB 4.2版本。
 
 ## 计算规格
 

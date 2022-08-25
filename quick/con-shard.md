@@ -13,33 +13,22 @@ mongodb://[username:password@]host1[:port1][,...hostN[:portN]][/[database][?opti
 
 假设控制台上有这么一个分片集：
 
-![image](/images/quick/list3.png)
+![image](/images/quick/shardConnectURL.jpg)
 
-列表中访问地址即 mongos 节点地址,  是`10.60.219.92:27017`
+列表中访问地址即所有 mongos 节点的连接地址，将‘****’改为集群密码即可进行连接:
 
-因此，我们可以得到这个分片集的连接模式的MongoDB URL为：
 ```http
-mongodb://10.60.219.92:27017/
+mongodb://root:****@10.60.153.61:27017,10.60.252.47:27017
 ```
 
 连接的截图如下图所示：
 
-![image](/images/quick/connectShard.png)
-
-在 url 中指定用户名和密码连接:
-
-```http
-mongodb://root:thisispassword@10.60.219.92:27017/admin
-```
-
-截图如下：
-  
-![image](/images/quick/connectReplicaSet2.png)
+![image](/images/quick/connectMongos.png)
 
 “读写分离”:
 
 ```http
-mongodb://root:thisispassword@10.60.219.92:27017/admin?readPreference=secondary
+mongodb://root:thisispassword@10.60.153.61:27017,10.60.252.47:27017/admin?readPreference=secondary
 ```
 
 ## 参考文档：
