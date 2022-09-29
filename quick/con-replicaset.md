@@ -37,10 +37,9 @@ mongodb://[username:password@]host1[:port1][,host2[:port2],...[,hostN[:portN]]][
 
 上面的例子中，可以使用下面的方法实现读写分离的效果：
 ```http
-mongodb://root:thisispassword@10.60.52.158:27017,10.60.188.13:27017,10.60.128.181:27017/admin?replicaSet=umongodb-rs-xjnas2un&readPreference=secondary
+mongodb://root:thisispassword@10.60.52.158:27017,10.60.188.13:27017,10.60.128.181:27017/admin?replicaSet=umongodb-rs-xjnas2un&readPreference=secondaryPreferred
 ```
 
-![image](/images/quick/connectReplicaSet3.png)
 
 ## 参考文档：
 
