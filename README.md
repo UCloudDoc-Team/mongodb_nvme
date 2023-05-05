@@ -21,4 +21,5 @@
     * [实例管理](/mongodb_nvme/guide/instance)
     * [备份管理](/mongodb_nvme/guide/backup)
     * [告警管理](/mongodb_nvme/guide/monitor)
+    * [参数模版管理](/mongodb_nvme/guide/config_template)
 * [FAQs](/mongodb_nvme/faqs)
