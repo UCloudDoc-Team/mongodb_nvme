@@ -19,7 +19,8 @@
 * 操作指南
     * [安全组](/mongodb_nvme/guide/secgrp)
     * [实例管理](/mongodb_nvme/guide/instance)
-    * [备份管理](/mongodb_nvme/guide/backup)
+    * [备份与恢复管理](/mongodb_nvme/guide/backup)
+    * [回档管理](/mongodb_nvme/guide/recover)
     * [告警管理](/mongodb_nvme/guide/monitor)
     * [参数模版管理](/mongodb_nvme/guide/config_template)
 * [FAQs](/mongodb_nvme/faqs)
