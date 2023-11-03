@@ -4,7 +4,7 @@
 
 MongoDB实例的日志支持错误日志（ErrorLog）和慢查询日志（SlowLog）。
 
-错误日志（ErrorLog）是记录MongoDB实例服务进程在启动/关闭或运行过程中遇到的错误信息。
+错误日志（ErrorLog）是记录MongoDB实例服务进程在启动、关闭或运行过程中遇到的错误信息。
 
 慢查询日志（SlowLog）记录执行时间较长的查询操作。
 
@@ -20,7 +20,7 @@ MongoDB实例的日志支持错误日志（ErrorLog）和慢查询日志（SlowL
 
 ![image](/images/guide/log_3.png)
 
-点击选择“打包日志”, 可以将当前选择时间内日志打包, 在“日志包”中可以下载到本地。
+点击“打包日志”, 可以将当前选择时间内日志打包, 在“日志包”中可以下载到本地。
 
 ![image](/images/guide/log_4.png)
 
