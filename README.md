@@ -23,4 +23,5 @@
     * [回档管理](/mongodb_nvme/guide/recover)
     * [告警管理](/mongodb_nvme/guide/monitor)
     * [参数模版管理](/mongodb_nvme/guide/config_template)
+    * [日志管理](/mongodb_nvme/guide/log_new)
 * [FAQs](/mongodb_nvme/faqs)
