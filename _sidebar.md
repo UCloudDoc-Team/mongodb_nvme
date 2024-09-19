@@ -19,6 +19,7 @@
     * [安全组](/mongodb_nvme/guide/secgrp)
     * [实例管理](/mongodb_nvme/guide/instance)
     * [备份与恢复管理](/mongodb_nvme/guide/backup)
+    * [快照备份](/mongodb_nvme/guide/snapshot)
     * [回档管理](/mongodb_nvme/guide/recover)
     * [告警管理](/mongodb_nvme/guide/monitor)
     * [参数模版管理](/mongodb_nvme/guide/config_template)
