@@ -21,6 +21,7 @@
     * [主备切换](/mongodb_nvme/guide/switch)
     * [备份与恢复管理](/mongodb_nvme/guide/backup)
     * [快照备份](/mongodb_nvme/guide/snapshot)
+    * [Oplog备份](/mongodb_nvme/guide/oplog_backup)
     * [回档管理](/mongodb_nvme/guide/recover)
     * [告警管理](/mongodb_nvme/guide/monitor)
     * [参数模版管理](/mongodb_nvme/guide/config_template)
