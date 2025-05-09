@@ -26,4 +26,5 @@
     * [告警管理](/mongodb_nvme/guide/monitor)
     * [参数模版管理](/mongodb_nvme/guide/config_template)
     * [日志管理](/mongodb_nvme/guide/log_new)
+    * [多可用区部署](/mongodb_nvme/guide/cross_zone)
 * [FAQs](/mongodb_nvme/faqs)
