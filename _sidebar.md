@@ -18,6 +18,7 @@
     * [分片集模式连接](/mongodb_nvme/quick/con-shard)
 * 操作指南
     * [安全组](/mongodb_nvme/guide/secgrp)
+    * [计算规格热升级](/mongodb_nvme/guide/hot_upgrade)
     * [实例管理](/mongodb_nvme/guide/instance)
     * [主备切换](/mongodb_nvme/guide/switch)
     * [备份与恢复管理](/mongodb_nvme/guide/backup)
